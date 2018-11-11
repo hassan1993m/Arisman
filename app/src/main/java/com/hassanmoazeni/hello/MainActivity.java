@@ -15,9 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(Check_first_run.getCheck_first_run(this)){
+            Toast.makeText(getApplicationContext(),
+                    "25سلام", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(getApplicationContext(),
-                String.valueOf( ) + "25سلام", Toast.LENGTH_SHORT).show();
+            Check_first_run.setCheck_first_run(this,false);
+        }
+
 
         }
 

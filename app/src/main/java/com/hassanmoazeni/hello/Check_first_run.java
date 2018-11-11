@@ -1,56 +1,25 @@
 package com.hassanmoazeni.hello;
 
-
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.content.Context;
+import android.preference.PreferenceManager;
 
 
 /**
  * Created by HASSAN on 2018-11-10.
  */
 
-public class Check_first_run extends Activity {
+public class Check_first_run {
 
+    public static boolean getCheck_first_run(Context context) {
 
-
-    private SharedPreferences mSharedPreferences;
-    private boolean check_first_run ;
-
-    public boolean getCheck_first_run() {
-        return check_first_run;
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("first_run",true);
     }
 
-    public void setCheck_first_run(boolean check_first_run) {
-        this.check_first_run = check_first_run;
+    public static void setCheck_first_run(Context context,boolean check_first_run) {
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("first_run",check_first_run).commit();
     }
 
 
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
-        mSharedPreferences = getSharedPreferences("com.hassanmoazeni.hello",MODE_PRIVATE);
-        Check_first_run n = new Check_first_run();
-
-
-       /*if (!mSharedPreferences.getBoolean("first_run",true)){*/
-        n.setCheck_first_run(true);
-        boolean num = n.getCheck_first_run();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-           /*mSharedPreferences.edit().putBoolean("first_run",false);
-       }else {
-           check_first_run.setCheck_first_run(true);
-       }*/
-
-
-    }
 }
