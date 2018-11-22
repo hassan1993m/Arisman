@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,22 +10,51 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonselector"
         android:text="تأیید"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="301dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.18" />
 
-    <EditText
+    <android.support.v7.widget.AppCompatEditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoText="false"
+        android:layout_marginEnd="44dp"
+        android:layout_marginTop="56dp"
         android:elevation="0dp"
         android:ems="10"
         android:fadingEdge="horizontal|vertical"
         android:hint="شماره همراه"
-        android:inputType="phone"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="207dp"
+        android:textColorHighlight="#b27cff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.rilixtech.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="50dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:ccp_defaultNameCode="IR"
+        app:ccp_enablePhoneAutoFormatter="false"
+        app:ccp_hideNameCode="true"
+        app:ccp_showFlag="false"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
 

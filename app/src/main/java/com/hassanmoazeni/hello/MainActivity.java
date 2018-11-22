@@ -1,6 +1,7 @@
 package com.hassanmoazeni.hello;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,11 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(Check_first_run.getCheck_first_run(this)){
+        if(CheckFirstRun.getCheck_first_run(this)){
+
+            startActivity(new Intent(MainActivity.this, Login.class));
+
             Toast.makeText(getApplicationContext(),
                     "25سلام", Toast.LENGTH_SHORT).show();
 
-            Check_first_run.setCheck_first_run(this,false);
+            //CheckFirstRun.setCheck_first_run(this,false);
         }
 
 
